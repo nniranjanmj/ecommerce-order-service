@@ -47,4 +47,9 @@ app.put('/:id/status', (req, res) => {
   res.json(order);
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', service: 'order-service' });
+});
+
 app.listen(3003, () => console.log('Order Service running on port 3003'));
